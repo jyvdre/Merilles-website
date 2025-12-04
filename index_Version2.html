@@ -1,0 +1,76 @@
+  <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Merilles Typing Test</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Merilles Typing Test</h1>
+      <p class="lead">Test your speed and accuracy. Be fast, be precise — and have fun!</p>
+    </header>
+
+    <section class="controls card">
+      <label for="duration">Duration:</label>
+      <select id="duration" aria-label="Test duration">
+        <option value="15">15s</option>
+        <option value="30">30s</option>
+        <option value="60" selected>60s</option>
+        <option value="120">120s</option>
+      </select>
+      <button id="startBtn" class="btn primary">Start Test</button>
+      <button id="restartBtn" class="btn" hidden>Restart</button>
+      <div class="mode">Prompts: <span id="promptMode">Random</span></div>
+    </section>
+
+    <section class="test card">
+      <div class="meta">
+        <div class="timer">Time: <span id="time">0.00</span>s</div>
+        <div class="wpm">WPM: <span id="wpm">0</span></div>
+        <div class="accuracy">Accuracy: <span id="accuracy">100%</span></div>
+      </div>
+
+      <article id="prompt" class="prompt" aria-live="polite"></article>
+
+      <label for="input" class="sr-only">Type here</label>
+      <textarea id="input" placeholder="Start the test to type..." disabled aria-disabled="true" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+
+      <div class="progress-wrap" hidden aria-hidden="true">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+    </section>
+
+    <section id="results" class="card results" hidden>
+      <h2>Results</h2>
+      <div class="results-grid">
+        <div class="metric">
+          <div class="label">Elapsed</div>
+          <div id="resElapsed" class="value">0.00 s</div>
+        </div>
+        <div class="metric">
+          <div class="label">WPM</div>
+          <div id="resWpm" class="value">0</div>
+        </div>
+        <div class="metric">
+          <div class="label">Accuracy</div>
+          <div id="resAcc" class="value">100%</div>
+        </div>
+      </div>
+      <div class="result-actions">
+        <button id="retryBtn" class="btn primary">Try Again</button>
+        <button id="shareBtn" class="btn">Share Score</button>
+      </div>
+      <div id="cheer" class="cheer" aria-hidden="true">🎉</div>
+    </section>
+
+    <footer class="card small muted">
+      <p>Prompts are curated for varied punctuation and capitalization to better measure real-world typing accuracy.</p>
+    </footer>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
