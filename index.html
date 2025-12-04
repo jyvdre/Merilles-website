@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Merilles Typing Test</title>
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main class="container">
@@ -15,7 +15,7 @@
 
     <section class="controls card">
       <label for="duration">Duration:</label>
-      <select id="duration">
+      <select id="duration" aria-label="Test duration">
         <option value="15">15s</option>
         <option value="30">30s</option>
         <option value="60" selected>60s</option>
@@ -36,12 +36,11 @@
       <article id="prompt" class="prompt" aria-live="polite"></article>
 
       <label for="input" class="sr-only">Type here</label>
-      <textarea id="input" placeholder="Start the test to type..." disabled aria-disabled="true"></textarea>
+      <textarea id="input" placeholder="Start the test to type..." disabled aria-disabled="true" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
 
-      <div class="progress-wrap" hidden>
+      <div class="progress-wrap" hidden aria-hidden="true">
         <div class="progress-bar" id="progressBar"></div>
       </div>
-
     </section>
 
     <section id="results" class="card results" hidden>
@@ -68,10 +67,10 @@
     </section>
 
     <footer class="card small muted">
-      <p>Prompts are curated for varied punctuation, capitalization and rhythm to measure real-world typing accuracy.</p>
+      <p>Prompts are curated for varied punctuation and capitalization to better measure real-world typing accuracy.</p>
     </footer>
   </main>
 
-  <script src="/app.js" defer></script>
+  <script src="app.js" defer></script>
 </body>
 </html>
